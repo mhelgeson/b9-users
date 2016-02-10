@@ -6,26 +6,34 @@
 
 A [b9](https://github.com/mhelgeson/b9) slack bot plugin, which provides and maintains an array of team users.
 
+## Methods
+
+#### `b9.user( key )`
+Returns a user object.
+
+- **`key`** *`{String}`* <br />
+The `id` or `name` of a user to find.
+
 ## Properties
 
 #### `b9.users` *`{Array}`*
-A list of user objects, one for every member of the team.
+A list of user objects, one for every member of the team. <br />
 https://api.slack.com/types/user
 
 ## Listeners
 
 #### `"rtm.start"`
-Initializes the `users` list.
+Initializes the `users` list. <br />
 https://api.slack.com/methods/rtm.start
 
 #### `"team_join"`
-Adds a new user to the `users` list.
+Adds a new user to the `users` list. <br />
 https://api.slack.com/events/team_join
 
 #### `"user_change"`
-Updates an item in the `users` list.
+Updates an item in the `users` list. <br />
 https://api.slack.com/events/user_change
 
 #### `"presence_change"`
-Updates an item in the `users` list.
+Updates an item in the `users` list. <br />
 https://api.slack.com/events/presence_change

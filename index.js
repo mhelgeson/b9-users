@@ -1,5 +1,21 @@
 module.exports = function( b9 ){
 
+  // define public property
+  b9.users = [];
+
+  // define public method
+  b9.user = function( key ){
+    var found;
+    b9.users.every(function( user ){
+      if ( user.id === key || user.name === key ){
+        found = user;
+      }
+      return !found;
+    });
+    return found;
+  };
+
+  // initialize the users list
   b9.on('rtm.start', function( arg ){
     b9.users = arg.users;
   });

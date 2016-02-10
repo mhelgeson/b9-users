@@ -58,4 +58,10 @@ describe('src/index', function(){
     assert.equal( bot.users[2].presence, 'away' );
   });
 
+  it('finds a user by name or id',function(){
+    assert.equal( bot.user('U002').name, 'John Adams' );
+    assert.equal( bot.user('Thomas Jefferson').id, 'U003' );
+    assert.equal( bot.user('U007'), undefined );
+  });
+
 });
